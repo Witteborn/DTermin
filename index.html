@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ein Date mit Gökhan 💕</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💕</text></svg>" />
+</head>
+<body>
+  <!-- schwebende Herzen im Hintergrund -->
+  <div class="hearts" aria-hidden="true">
+    <span>💗</span><span>💕</span><span>💞</span><span>🌸</span><span>💖</span>
+    <span>✨</span><span>💘</span><span>🌷</span><span>💝</span><span>💓</span>
+  </div>
+
+  <main class="card">
+    <header class="card-header">
+      <div class="emoji-big">💌</div>
+      <h1>Hey Vanessa…</h1>
+      <p class="subtitle">möchtest du ein Date mit mir, <strong>Gökhan</strong>, ausmachen? 🥰<br />Such dir einfach aus, was dir gefällt!</p>
+    </header>
+
+    <!--
+      Die Buchung wird per E-Mail über FormSubmit.co verschickt.
+      Keine Anmeldung, kein Server nötig. Beim allerersten Absenden
+      schickt FormSubmit eine Bestätigungs-Mail an Gökhan — einmal
+      bestätigen, danach kommen alle Buchungen direkt an.
+    -->
+    <form action="https://formsubmit.co/goekhan@witteborn.dev" method="POST" class="date-form">
+      <!-- FormSubmit-Einstellungen -->
+      <input type="hidden" name="_subject" value="💕 Vanessa möchte ein Date mit dir!" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="danke.html" />
+      <!-- Honeypot gegen Spam -->
+      <input type="text" name="_honey" style="display:none" />
+
+      <fieldset>
+        <label for="tag">📅 An welchem Tag?</label>
+        <input type="date" id="tag" name="Tag" required />
+      </fieldset>
+
+      <fieldset>
+        <label for="uhrzeit">🕒 Um welche Uhrzeit?</label>
+        <input type="time" id="uhrzeit" name="Uhrzeit" required />
+      </fieldset>
+
+      <fieldset>
+        <label>🍽️ Was sollen wir machen?</label>
+        <div class="options" role="radiogroup">
+          <label class="option"><input type="radio" name="Art des Dates" value="Asiatisch essen 🍜" required /><span>🍜 Asiatisch essen</span></label>
+          <label class="option"><input type="radio" name="Art des Dates" value="Italienisch essen 🍝" /><span>🍝 Italienisch essen</span></label>
+          <label class="option"><input type="radio" name="Art des Dates" value="Kino 🎬" /><span>🎬 Kino</span></label>
+          <label class="option"><input type="radio" name="Art des Dates" value="Cocktails / Bar 🍹" /><span>🍹 Cocktails / Bar</span></label>
+          <label class="option"><input type="radio" name="Art des Dates" value="Kaffee & Kuchen ☕" /><span>☕ Kaffee &amp; Kuchen</span></label>
+          <label class="option"><input type="radio" name="Art des Dates" value="Spaziergang 🌳" /><span>🌳 Spaziergang</span></label>
+          <label class="option"><input type="radio" name="Art des Dates" value="Picknick 🧺" /><span>🧺 Picknick</span></label>
+          <label class="option"><input type="radio" name="Art des Dates" value="Zusammen kochen 👩‍🍳" /><span>👩‍🍳 Zusammen kochen</span></label>
+          <label class="option"><input type="radio" name="Art des Dates" value="Überraschung 🎁" /><span>🎁 Überrasch mich</span></label>
+        </div>
+        <input type="text" id="eigener" name="Eigener Vorschlag" placeholder="…oder dein eigener Vorschlag 💡" class="text-input" />
+      </fieldset>
+
+      <fieldset>
+        <label>📍 Wo soll es sein?</label>
+        <div class="options options-3" role="radiogroup">
+          <label class="option"><input type="radio" name="Ort" value="Bei Gökhan 🏠" required /><span>🏠 Bei mir</span></label>
+          <label class="option"><input type="radio" name="Ort" value="Bei Vanessa 🏡" /><span>🏡 Bei dir</span></label>
+          <label class="option"><input type="radio" name="Ort" value="Außerhalb 🌆" /><span>🌆 Außerhalb</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <label for="nachricht">💬 Eine süße Nachricht? (optional)</label>
+        <textarea id="nachricht" name="Nachricht" rows="3" placeholder="Schreib mir was Liebes…"></textarea>
+      </fieldset>
+
+      <button type="submit" class="submit-btn">Date anfragen 💖</button>
+    </form>
+
+    <footer class="card-footer">Ich freu mich so auf dich 🥹💕</footer>
+  </main>
+</body>
+</html>
